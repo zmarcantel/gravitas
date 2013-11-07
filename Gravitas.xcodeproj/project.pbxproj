@@ -19,6 +19,17 @@
 		9246FF7D182B43A1001D6EF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9246FF65182B43A0001D6EF8 /* UIKit.framework */; };
 		9246FF85182B43A1001D6EF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9246FF83182B43A1001D6EF8 /* InfoPlist.strings */; };
 		9246FF87182B43A1001D6EF8 /* GravitasTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9246FF86182B43A1001D6EF8 /* GravitasTests.m */; };
+		9246FF91182B450B001D6EF8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9246FF90182B450B001D6EF8 /* README.md */; };
+		9246FF93182B4831001D6EF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9246FF92182B4831001D6EF8 /* Main.storyboard */; };
+		9246FF9D182B5D33001D6EF8 /* 117-todo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9246FF9A182B5D33001D6EF8 /* 117-todo.png */; };
+		9246FF9F182B5D33001D6EF8 /* 191-collection.png in Resources */ = {isa = PBXBuildFile; fileRef = 9246FF9C182B5D33001D6EF8 /* 191-collection.png */; };
+		9246FFA1182B5D99001D6EF8 /* 77-ekg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9246FFA0182B5D99001D6EF8 /* 77-ekg.png */; };
+		9246FFA5182B6970001D6EF8 /* GravAddCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9246FFA4182B6970001D6EF8 /* GravAddCategoryViewController.m */; };
+		9246FFAB182B6BAD001D6EF8 /* GravCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9246FFAA182B6BAD001D6EF8 /* GravCategoryTableViewController.m */; };
+		9246FFAF182B6C59001D6EF8 /* GravAddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9246FFAE182B6C59001D6EF8 /* GravAddTaskViewController.m */; };
+		9246FFB2182B6C74001D6EF8 /* GravTaskTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9246FFB1182B6C74001D6EF8 /* GravTaskTableViewController.m */; };
+		92DAAE7A182B8E9B0063BA75 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DAAE79182B8E9B0063BA75 /* Task.m */; };
+		92DAAE7D182B8EDF0063BA75 /* Task.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92DAAE7B182B8EDF0063BA75 /* Task.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +59,22 @@
 		9246FF82182B43A1001D6EF8 /* GravitasTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GravitasTests-Info.plist"; sourceTree = "<group>"; };
 		9246FF84182B43A1001D6EF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9246FF86182B43A1001D6EF8 /* GravitasTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GravitasTests.m; sourceTree = "<group>"; };
+		9246FF90182B450B001D6EF8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		9246FF92182B4831001D6EF8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9246FF9A182B5D33001D6EF8 /* 117-todo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "117-todo.png"; sourceTree = "<group>"; };
+		9246FF9C182B5D33001D6EF8 /* 191-collection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "191-collection.png"; sourceTree = "<group>"; };
+		9246FFA0182B5D99001D6EF8 /* 77-ekg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "77-ekg.png"; sourceTree = "<group>"; };
+		9246FFA3182B6970001D6EF8 /* GravAddCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GravAddCategoryViewController.h; path = Categories/GravAddCategoryViewController.h; sourceTree = "<group>"; };
+		9246FFA4182B6970001D6EF8 /* GravAddCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravAddCategoryViewController.m; path = Categories/GravAddCategoryViewController.m; sourceTree = "<group>"; };
+		9246FFA9182B6BAD001D6EF8 /* GravCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GravCategoryTableViewController.h; path = Categories/GravCategoryTableViewController.h; sourceTree = "<group>"; };
+		9246FFAA182B6BAD001D6EF8 /* GravCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravCategoryTableViewController.m; path = Categories/GravCategoryTableViewController.m; sourceTree = "<group>"; };
+		9246FFAD182B6C59001D6EF8 /* GravAddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GravAddTaskViewController.h; path = Tasks/GravAddTaskViewController.h; sourceTree = "<group>"; };
+		9246FFAE182B6C59001D6EF8 /* GravAddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravAddTaskViewController.m; path = Tasks/GravAddTaskViewController.m; sourceTree = "<group>"; };
+		9246FFB0182B6C74001D6EF8 /* GravTaskTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GravTaskTableViewController.h; path = Tasks/GravTaskTableViewController.h; sourceTree = "<group>"; };
+		9246FFB1182B6C74001D6EF8 /* GravTaskTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravTaskTableViewController.m; path = Tasks/GravTaskTableViewController.m; sourceTree = "<group>"; };
+		92DAAE78182B8E9B0063BA75 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Task.h; path = Data/Task.h; sourceTree = "<group>"; };
+		92DAAE79182B8E9B0063BA75 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Task.m; path = Data/Task.m; sourceTree = "<group>"; };
+		92DAAE7C182B8EDF0063BA75 /* Task.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Task.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +104,7 @@
 		9246FF55182B43A0001D6EF8 = {
 			isa = PBXGroup;
 			children = (
+				9246FF90182B450B001D6EF8 /* README.md */,
 				9246FF67182B43A1001D6EF8 /* Gravitas */,
 				9246FF80182B43A1001D6EF8 /* GravitasTests */,
 				9246FF60182B43A0001D6EF8 /* Frameworks */,
@@ -107,8 +135,13 @@
 		9246FF67182B43A1001D6EF8 /* Gravitas */ = {
 			isa = PBXGroup;
 			children = (
+				9246FFB3182B6EAF001D6EF8 /* Data */,
+				9246FFAC182B6C2D001D6EF8 /* Tasks */,
+				9246FFA2182B6926001D6EF8 /* Categories */,
+				9246FF99182B5D33001D6EF8 /* Media */,
 				9246FF70182B43A1001D6EF8 /* GravAppDelegate.h */,
 				9246FF71182B43A1001D6EF8 /* GravAppDelegate.m */,
+				9246FF92182B4831001D6EF8 /* Main.storyboard */,
 				9246FF73182B43A1001D6EF8 /* Images.xcassets */,
 				9246FF68182B43A1001D6EF8 /* Supporting Files */,
 			);
@@ -142,6 +175,48 @@
 				9246FF83182B43A1001D6EF8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9246FF99182B5D33001D6EF8 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				9246FFA0182B5D99001D6EF8 /* 77-ekg.png */,
+				9246FF9A182B5D33001D6EF8 /* 117-todo.png */,
+				9246FF9C182B5D33001D6EF8 /* 191-collection.png */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		9246FFA2182B6926001D6EF8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				9246FFA3182B6970001D6EF8 /* GravAddCategoryViewController.h */,
+				9246FFA4182B6970001D6EF8 /* GravAddCategoryViewController.m */,
+				9246FFA9182B6BAD001D6EF8 /* GravCategoryTableViewController.h */,
+				9246FFAA182B6BAD001D6EF8 /* GravCategoryTableViewController.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		9246FFAC182B6C2D001D6EF8 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				9246FFAD182B6C59001D6EF8 /* GravAddTaskViewController.h */,
+				9246FFAE182B6C59001D6EF8 /* GravAddTaskViewController.m */,
+				9246FFB0182B6C74001D6EF8 /* GravTaskTableViewController.h */,
+				9246FFB1182B6C74001D6EF8 /* GravTaskTableViewController.m */,
+			);
+			name = Tasks;
+			sourceTree = "<group>";
+		};
+		9246FFB3182B6EAF001D6EF8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				92DAAE7B182B8EDF0063BA75 /* Task.xcdatamodeld */,
+				92DAAE78182B8E9B0063BA75 /* Task.h */,
+				92DAAE79182B8E9B0063BA75 /* Task.m */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +267,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Zachary Marcantel";
 				TargetAttributes = {
+					9246FF5D182B43A0001D6EF8 = {
+						DevelopmentTeam = 6FG999QH7H;
+					};
 					9246FF78182B43A1001D6EF8 = {
 						TestTargetID = 9246FF5D182B43A0001D6EF8;
 					};
@@ -220,8 +298,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9246FF9D182B5D33001D6EF8 /* 117-todo.png in Resources */,
+				9246FF91182B450B001D6EF8 /* README.md in Resources */,
+				9246FFA1182B5D99001D6EF8 /* 77-ekg.png in Resources */,
 				9246FF6C182B43A1001D6EF8 /* InfoPlist.strings in Resources */,
 				9246FF74182B43A1001D6EF8 /* Images.xcassets in Resources */,
+				9246FF9F182B5D33001D6EF8 /* 191-collection.png in Resources */,
+				9246FF93182B4831001D6EF8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +325,12 @@
 			files = (
 				9246FF72182B43A1001D6EF8 /* GravAppDelegate.m in Sources */,
 				9246FF6E182B43A1001D6EF8 /* main.m in Sources */,
+				9246FFAF182B6C59001D6EF8 /* GravAddTaskViewController.m in Sources */,
+				9246FFA5182B6970001D6EF8 /* GravAddCategoryViewController.m in Sources */,
+				9246FFB2182B6C74001D6EF8 /* GravTaskTableViewController.m in Sources */,
+				92DAAE7A182B8E9B0063BA75 /* Task.m in Sources */,
+				92DAAE7D182B8EDF0063BA75 /* Task.xcdatamodeld in Sources */,
+				9246FFAB182B6BAD001D6EF8 /* GravCategoryTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,10 +451,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gravitas/Gravitas-Prefix.pch";
 				INFOPLIST_FILE = "Gravitas/Gravitas-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -375,10 +467,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gravitas/Gravitas-Prefix.pch";
 				INFOPLIST_FILE = "Gravitas/Gravitas-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -444,6 +539,7 @@
 				9246FF8C182B43A1001D6EF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9246FF8D182B43A1001D6EF8 /* Build configuration list for PBXNativeTarget "GravitasTests" */ = {
 			isa = XCConfigurationList;
@@ -452,8 +548,23 @@
 				9246FF8F182B43A1001D6EF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		92DAAE7B182B8EDF0063BA75 /* Task.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				92DAAE7C182B8EDF0063BA75 /* Task.xcdatamodel */,
+			);
+			currentVersion = 92DAAE7C182B8EDF0063BA75 /* Task.xcdatamodel */;
+			name = Task.xcdatamodeld;
+			path = Data/Task.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9246FF56182B43A0001D6EF8 /* Project object */;
 }
