@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9246FF62182B43A0001D6EF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9246FF61182B43A0001D6EF8 /* Foundation.framework */; };
+		9246FF64182B43A0001D6EF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9246FF63182B43A0001D6EF8 /* CoreGraphics.framework */; };
+		9246FF66182B43A0001D6EF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9246FF65182B43A0001D6EF8 /* UIKit.framework */; };
+		9246FF6C182B43A1001D6EF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9246FF6A182B43A1001D6EF8 /* InfoPlist.strings */; };
+		9246FF6E182B43A1001D6EF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9246FF6D182B43A1001D6EF8 /* main.m */; };
+		9246FF72182B43A1001D6EF8 /* GravAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9246FF71182B43A1001D6EF8 /* GravAppDelegate.m */; };
+		9246FF74182B43A1001D6EF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9246FF73182B43A1001D6EF8 /* Images.xcassets */; };
+		9246FF7B182B43A1001D6EF8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9246FF7A182B43A1001D6EF8 /* XCTest.framework */; };
+		9246FF7C182B43A1001D6EF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9246FF61182B43A0001D6EF8 /* Foundation.framework */; };
+		9246FF7D182B43A1001D6EF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9246FF65182B43A0001D6EF8 /* UIKit.framework */; };
+		9246FF85182B43A1001D6EF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9246FF83182B43A1001D6EF8 /* InfoPlist.strings */; };
+		9246FF87182B43A1001D6EF8 /* GravitasTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9246FF86182B43A1001D6EF8 /* GravitasTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9246FF7E182B43A1001D6EF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9246FF56182B43A0001D6EF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9246FF5D182B43A0001D6EF8;
+			remoteInfo = Gravitas;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9246FF5E182B43A0001D6EF8 /* Gravitas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gravitas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9246FF61182B43A0001D6EF8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9246FF63182B43A0001D6EF8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9246FF65182B43A0001D6EF8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9246FF69182B43A1001D6EF8 /* Gravitas-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gravitas-Info.plist"; sourceTree = "<group>"; };
+		9246FF6B182B43A1001D6EF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9246FF6D182B43A1001D6EF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9246FF6F182B43A1001D6EF8 /* Gravitas-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gravitas-Prefix.pch"; sourceTree = "<group>"; };
+		9246FF70182B43A1001D6EF8 /* GravAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GravAppDelegate.h; sourceTree = "<group>"; };
+		9246FF71182B43A1001D6EF8 /* GravAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GravAppDelegate.m; sourceTree = "<group>"; };
+		9246FF73182B43A1001D6EF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9246FF79182B43A1001D6EF8 /* GravitasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GravitasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9246FF7A182B43A1001D6EF8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9246FF82182B43A1001D6EF8 /* GravitasTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GravitasTests-Info.plist"; sourceTree = "<group>"; };
+		9246FF84182B43A1001D6EF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9246FF86182B43A1001D6EF8 /* GravitasTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GravitasTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9246FF5B182B43A0001D6EF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9246FF64182B43A0001D6EF8 /* CoreGraphics.framework in Frameworks */,
+				9246FF66182B43A0001D6EF8 /* UIKit.framework in Frameworks */,
+				9246FF62182B43A0001D6EF8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9246FF76182B43A1001D6EF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9246FF7B182B43A1001D6EF8 /* XCTest.framework in Frameworks */,
+				9246FF7D182B43A1001D6EF8 /* UIKit.framework in Frameworks */,
+				9246FF7C182B43A1001D6EF8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9246FF55182B43A0001D6EF8 = {
+			isa = PBXGroup;
+			children = (
+				9246FF67182B43A1001D6EF8 /* Gravitas */,
+				9246FF80182B43A1001D6EF8 /* GravitasTests */,
+				9246FF60182B43A0001D6EF8 /* Frameworks */,
+				9246FF5F182B43A0001D6EF8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9246FF5F182B43A0001D6EF8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9246FF5E182B43A0001D6EF8 /* Gravitas.app */,
+				9246FF79182B43A1001D6EF8 /* GravitasTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9246FF60182B43A0001D6EF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9246FF61182B43A0001D6EF8 /* Foundation.framework */,
+				9246FF63182B43A0001D6EF8 /* CoreGraphics.framework */,
+				9246FF65182B43A0001D6EF8 /* UIKit.framework */,
+				9246FF7A182B43A1001D6EF8 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9246FF67182B43A1001D6EF8 /* Gravitas */ = {
+			isa = PBXGroup;
+			children = (
+				9246FF70182B43A1001D6EF8 /* GravAppDelegate.h */,
+				9246FF71182B43A1001D6EF8 /* GravAppDelegate.m */,
+				9246FF73182B43A1001D6EF8 /* Images.xcassets */,
+				9246FF68182B43A1001D6EF8 /* Supporting Files */,
+			);
+			path = Gravitas;
+			sourceTree = "<group>";
+		};
+		9246FF68182B43A1001D6EF8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9246FF69182B43A1001D6EF8 /* Gravitas-Info.plist */,
+				9246FF6A182B43A1001D6EF8 /* InfoPlist.strings */,
+				9246FF6D182B43A1001D6EF8 /* main.m */,
+				9246FF6F182B43A1001D6EF8 /* Gravitas-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9246FF80182B43A1001D6EF8 /* GravitasTests */ = {
+			isa = PBXGroup;
+			children = (
+				9246FF86182B43A1001D6EF8 /* GravitasTests.m */,
+				9246FF81182B43A1001D6EF8 /* Supporting Files */,
+			);
+			path = GravitasTests;
+			sourceTree = "<group>";
+		};
+		9246FF81182B43A1001D6EF8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9246FF82182B43A1001D6EF8 /* GravitasTests-Info.plist */,
+				9246FF83182B43A1001D6EF8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9246FF5D182B43A0001D6EF8 /* Gravitas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9246FF8A182B43A1001D6EF8 /* Build configuration list for PBXNativeTarget "Gravitas" */;
+			buildPhases = (
+				9246FF5A182B43A0001D6EF8 /* Sources */,
+				9246FF5B182B43A0001D6EF8 /* Frameworks */,
+				9246FF5C182B43A0001D6EF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gravitas;
+			productName = Gravitas;
+			productReference = 9246FF5E182B43A0001D6EF8 /* Gravitas.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9246FF78182B43A1001D6EF8 /* GravitasTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9246FF8D182B43A1001D6EF8 /* Build configuration list for PBXNativeTarget "GravitasTests" */;
+			buildPhases = (
+				9246FF75182B43A1001D6EF8 /* Sources */,
+				9246FF76182B43A1001D6EF8 /* Frameworks */,
+				9246FF77182B43A1001D6EF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9246FF7F182B43A1001D6EF8 /* PBXTargetDependency */,
+			);
+			name = GravitasTests;
+			productName = GravitasTests;
+			productReference = 9246FF79182B43A1001D6EF8 /* GravitasTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9246FF56182B43A0001D6EF8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Grav;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Zachary Marcantel";
+				TargetAttributes = {
+					9246FF78182B43A1001D6EF8 = {
+						TestTargetID = 9246FF5D182B43A0001D6EF8;
+					};
+				};
+			};
+			buildConfigurationList = 9246FF59182B43A0001D6EF8 /* Build configuration list for PBXProject "Gravitas" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9246FF55182B43A0001D6EF8;
+			productRefGroup = 9246FF5F182B43A0001D6EF8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9246FF5D182B43A0001D6EF8 /* Gravitas */,
+				9246FF78182B43A1001D6EF8 /* GravitasTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9246FF5C182B43A0001D6EF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9246FF6C182B43A1001D6EF8 /* InfoPlist.strings in Resources */,
+				9246FF74182B43A1001D6EF8 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9246FF77182B43A1001D6EF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9246FF85182B43A1001D6EF8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9246FF5A182B43A0001D6EF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9246FF72182B43A1001D6EF8 /* GravAppDelegate.m in Sources */,
+				9246FF6E182B43A1001D6EF8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9246FF75182B43A1001D6EF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9246FF87182B43A1001D6EF8 /* GravitasTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9246FF7F182B43A1001D6EF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9246FF5D182B43A0001D6EF8 /* Gravitas */;
+			targetProxy = 9246FF7E182B43A1001D6EF8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9246FF6A182B43A1001D6EF8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9246FF6B182B43A1001D6EF8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9246FF83182B43A1001D6EF8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9246FF84182B43A1001D6EF8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9246FF88182B43A1001D6EF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9246FF89182B43A1001D6EF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9246FF8B182B43A1001D6EF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gravitas/Gravitas-Prefix.pch";
+				INFOPLIST_FILE = "Gravitas/Gravitas-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9246FF8C182B43A1001D6EF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gravitas/Gravitas-Prefix.pch";
+				INFOPLIST_FILE = "Gravitas/Gravitas-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9246FF8E182B43A1001D6EF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gravitas.app/Gravitas";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gravitas/Gravitas-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GravitasTests/GravitasTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		9246FF8F182B43A1001D6EF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gravitas.app/Gravitas";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gravitas/Gravitas-Prefix.pch";
+				INFOPLIST_FILE = "GravitasTests/GravitasTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9246FF59182B43A0001D6EF8 /* Build configuration list for PBXProject "Gravitas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9246FF88182B43A1001D6EF8 /* Debug */,
+				9246FF89182B43A1001D6EF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9246FF8A182B43A1001D6EF8 /* Build configuration list for PBXNativeTarget "Gravitas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9246FF8B182B43A1001D6EF8 /* Debug */,
+				9246FF8C182B43A1001D6EF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9246FF8D182B43A1001D6EF8 /* Build configuration list for PBXNativeTarget "GravitasTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9246FF8E182B43A1001D6EF8 /* Debug */,
+				9246FF8F182B43A1001D6EF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9246FF56182B43A0001D6EF8 /* Project object */;
+}
