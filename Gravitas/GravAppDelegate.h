@@ -17,5 +17,6 @@
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 -(NSArray *) getAllTasks;
+-(NSArray *) getAllCategories;
 
 @end

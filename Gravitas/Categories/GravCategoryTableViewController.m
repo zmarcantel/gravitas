@@ -7,6 +7,8 @@
 //
 
 #import "GravCategoryTableViewController.h"
+#import "../GravAppDelegate.h"
+#import "GravCategoryViewCell.h"
 
 @interface GravCategoryTableViewController ()
 
@@ -26,12 +28,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    GravAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    self.managedObjectContext = appDelegate.managedObjectContext;
+    
+    [self updateCategoryList];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,31 +45,85 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.categories count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"ListPrototypeCell";
+    GravCategoryViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.delegate = self;
     
-    // Configure the cell...
+    GravCategory *category = [self.categories objectAtIndex:indexPath.row];
+    cell.textLabel.text = category.name;
     
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self deleteCategory:indexPath.row];
+        [self updateCategoryList];
+    }
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
+           editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView moreOptionButtonPressedInRowAtIndexPath:(NSIndexPath *)indexPath {
+    GravCategory *tappedItem = [self.categories objectAtIndex:indexPath.row];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Failed to save category object: %@", [error localizedDescription]);
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"Rename";
+}
+
+- (UIColor *)tableView:(UITableView *)tableView backgroundColorForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [UIColor colorWithRed:0.18f green:0.67f blue:0.84f alpha:1.0f];
+}
+
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue
 {
+    [self updateCategoryList];
+}
+
+- (IBAction) deleteCategory:(int)index
+{
+    [self.managedObjectContext deleteObject:[self.categories objectAtIndex:index]];
+    [self updateCategoryList];
+}
+
+- (IBAction) updateCategoryList
+{
+    GravAppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    self.categories = [delegate getAllCategories];
     
+    [self.tableView reloadData];
 }
 
 /*

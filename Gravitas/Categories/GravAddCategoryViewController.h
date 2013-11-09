@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "../GravAppDelegate.h"
+#import "../Data/GravCategory.h"
 
 @interface GravAddCategoryViewController : UIViewController
 
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @end

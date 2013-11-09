@@ -10,11 +10,14 @@
 
 #import "../GravAppDelegate.h"
 
-#import "../Data/Task.h"
+#import "../UI/GravTextField.h"
+#import "../Data/GravTask.h"
 
-@interface GravAddTaskViewController : UIViewController
+@interface GravAddTaskViewController : UIViewController <UITextFieldDelegate>
 
-@property Task *task;
+@property GravTask *task;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+
+- (void) donePicking;
 
 @end

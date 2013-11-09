@@ -98,7 +98,7 @@
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task"
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"GravTask"
                                               inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
@@ -106,6 +106,20 @@
     NSArray *tasks = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
     return tasks;
+}
+
+-(NSArray *) getAllCategories
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"GravCategory"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error;
+    NSArray *categories = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    return categories;
 }
 
 @end

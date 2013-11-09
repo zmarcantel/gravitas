@@ -8,6 +8,7 @@
 
 #import "GravTaskTableViewController.h"
 #import "../GravAppDelegate.h"
+#import "GravTableViewCell.h"
 
 @interface GravTaskTableViewController ()
 
@@ -39,7 +40,7 @@
     self.TASK_COMPLETE = [[NSNumber alloc] initWithInt: 1];
     self.TASK_INCOMPLETE = [[NSNumber alloc] initWithInt: 0];
 
-    [self updateTaskList:nil];
+    [self updateTaskList];
     
 //    [self setEditing:YES animated:YES];
 }
@@ -67,12 +68,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ListPrototypeCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    GravTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.delegate = self;
     
-    Task *task = [self.tasks objectAtIndex:indexPath.row];
-    cell.textLabel.text = task.name;
+    GravTask *task = [self.tasks objectAtIndex:indexPath.row];
+    cell.titleField.text = task.name;
     
-    if (task.completed == self.TASK_COMPLETE) {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE, MMM dd, yyyy '@' hh:mm a z"];
+    if (task.completeDate != nil) {
+        cell.dueDateField.text = [@"Completed: " stringByAppendingString:[dateFormatter stringFromDate:task.completeDate]];
+    } else {
+        cell.dueDateField.text = [dateFormatter stringFromDate:task.targetDate];
+    }
+    
+    if (task.complete == self.TASK_COMPLETE) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -81,14 +91,44 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+                                            forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self deleteTask:indexPath.row];
+        [self updateTaskList];
+    }
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
+           editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Task *tappedItem = [self.tasks objectAtIndex:indexPath.row];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView moreOptionButtonPressedInRowAtIndexPath:(NSIndexPath *)indexPath {
+    GravTask *tappedItem = [self.tasks objectAtIndex:indexPath.row];
     
-    if (tappedItem.completed == self.TASK_COMPLETE) { tappedItem.completed = self.TASK_INCOMPLETE; }
-    else { tappedItem.completed = self.TASK_COMPLETE; }
- 
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    if (tappedItem.complete == self.TASK_COMPLETE) {
+        tappedItem.complete = self.TASK_INCOMPLETE;
+        tappedItem.completeDate = nil;
+    } else {
+        tappedItem.complete = self.TASK_COMPLETE;
+        tappedItem.completeDate = [NSDate date];
+    }
+    
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     
     NSError *error;
@@ -97,20 +137,20 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-                                            forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleNone) {
-        //add code here for when you hit delete
-    }
+- (NSString *)tableView:(UITableView *)tableView titleForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"Complete";
 }
 
+- (UIColor *)tableView:(UITableView *)tableView backgroundColorForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [UIColor colorWithRed:0.0f green:1.0f blue:0.0f alpha:1.0f];
+}
+ 
 - (IBAction) unwindToList:(UIStoryboardSegue *)segue
 {
-    [self updateTaskList:nil];
+    [self updateTaskList];
 }
 
-- (IBAction) updateTaskList:(id)sender
+- (IBAction) updateTaskList
 {
     GravAppDelegate *delegate = [UIApplication sharedApplication].delegate;
     self.tasks = [delegate getAllTasks];
@@ -121,7 +161,7 @@
 - (IBAction) deleteTask:(int)index
 {
     [self.managedObjectContext deleteObject:[self.tasks objectAtIndex:index]];
-    [self updateTaskList:nil];
+    [self updateTaskList];
 }
 
 /*

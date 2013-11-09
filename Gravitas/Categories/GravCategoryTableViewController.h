@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "../Data/GravCategory.h"
 
 @interface GravCategoryTableViewController : UITableViewController
+
+@property NSArray *categories;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @end
