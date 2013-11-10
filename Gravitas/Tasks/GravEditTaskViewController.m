@@ -19,6 +19,12 @@
 
 @implementation GravEditTaskViewController
 
+//--------------------------------------------------------------
+//
+// View Initialization
+//
+//--------------------------------------------------------------
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -57,10 +63,43 @@
     // Dispose of any resources that can be recreated.
 }
 
+//--------------------------------------------------------------
+//
+// View Transition Functions
+//
+//--------------------------------------------------------------
+
 - (IBAction) unwindEditView:(UIStoryboardSegue *)segue
 {
     // do something before segue
 }
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if (sender == self.gotoAssignButton) {
+        GravAssignCategoriesViewController *assign = [segue destinationViewController];
+        assign.currentTask = self.editingTask;
+    } else {
+        self.editingTask.name            = self.titleField.text;
+        self.editingTask.peopleWaiting   = [[NSNumber alloc] initWithInt:[self.waitingField.text integerValue]];
+        self.editingTask.details         = self.additionalField.text;
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"EEEE, MMM dd, yyyy '@' hh:mm a"];
+        self.editingTask.targetDate      = ((UIDatePicker *)self.dueDateField.inputView).date;
+        
+        NSError *error;
+        if (![self.managedObjectContext save:&error]) {
+            NSLog(@"Failed to save task object: %@", [error localizedDescription]);
+        }
+    }
+}
+
+//--------------------------------------------------------------
+//
+// Target Date Picker Functions
+//
+//--------------------------------------------------------------
 
 -(void)updateTextField:(id)sender
 {
@@ -91,27 +130,6 @@
     [toolbar setItems:[[NSArray alloc] initWithObjects:toolbarSpacer, toolbarDoneButton, nil]];
     
     return toolbar;
-}
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if (sender == self.gotoAssignButton) {
-        GravAssignCategoriesViewController *assign = [segue destinationViewController];
-        assign.currentTask = self.editingTask;
-    } else {
-        self.editingTask.name            = self.titleField.text;
-        self.editingTask.peopleWaiting   = [[NSNumber alloc] initWithInt:[self.waitingField.text integerValue]];
-        self.editingTask.details         = self.additionalField.text;
-    
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"EEEE, MMM dd, yyyy '@' hh:mm a"];
-        self.editingTask.targetDate      = ((UIDatePicker *)self.dueDateField.inputView).date;
-    
-        NSError *error;
-        if (![self.managedObjectContext save:&error]) {
-            NSLog(@"Failed to save task object: %@", [error localizedDescription]);
-        }
-    }
 }
 
 @end

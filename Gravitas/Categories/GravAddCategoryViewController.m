@@ -17,6 +17,12 @@
 
 @implementation GravAddCategoryViewController
 
+//--------------------------------------------------------------
+//
+// View Initialization
+//
+//--------------------------------------------------------------
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -52,12 +58,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+//--------------------------------------------------------------
+//
+// View Transition Functions
+//
+//--------------------------------------------------------------
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if (sender != self.doneButton) return;
     
     [self addCategory:sender];
 }
+
+//--------------------------------------------------------------
+//
+// Category Database Functions
+//
+//--------------------------------------------------------------
 
 - (void) addCategory: (id)sender {
     // TODO: add popup/marking for required fields

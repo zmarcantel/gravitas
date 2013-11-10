@@ -25,6 +25,13 @@
 
 @implementation GravAddTaskViewController
 
+//--------------------------------------------------------------
+//
+// View Iniitialization
+//
+//--------------------------------------------------------------
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -65,6 +72,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+//--------------------------------------------------------------
+//
+// Target Date Chooser Functions
+//
+//--------------------------------------------------------------
+
+
 -(void)updateTextField:(id)sender
 {
     UIDatePicker *picker = (UIDatePicker*)self.dueDateTextField.inputView;
@@ -97,6 +111,13 @@
 }
 
 
+//--------------------------------------------------------------
+//
+// View Transition Functions
+//
+//--------------------------------------------------------------
+
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     [self.dueDateTextField endEditing:YES];
@@ -115,6 +136,13 @@
         [self.managedObjectContext deleteObject:self.task];
     }
 }
+
+//--------------------------------------------------------------
+//
+// Task Database Functions
+//
+//--------------------------------------------------------------
+
 
 - (void) addTask {
     // TODO: add popup/marking for required fields

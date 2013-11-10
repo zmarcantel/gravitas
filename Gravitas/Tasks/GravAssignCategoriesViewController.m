@@ -16,6 +16,12 @@
 
 @implementation GravAssignCategoriesViewController
 
+//--------------------------------------------------------------
+//
+// View Initialization
+//
+//--------------------------------------------------------------
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -42,20 +48,34 @@
     // Dispose of any resources that can be recreated.
 }
 
+//--------------------------------------------------------------
+//
+// Table View Functions
+//
+//--------------------------------------------------------------
 #pragma mark - Table view data source
 
+//
+// Number of sections
+//
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
     return 1;
 }
 
+//
+// Number of rows in section
+//
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
     return [self.categories count];
 }
 
+//
+// Style cell at row
+//
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"AssignCategoryCell";
@@ -77,6 +97,9 @@
     return cell;
 }
 
+//
+// Selected row at index
+//
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"AssignCategoryCell";
@@ -84,7 +107,10 @@
     [cell.toggleActivity setOn:!cell.toggleActivity.on animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-     
+
+//
+// Switch within some row was toggled
+//
 - (void)switchValueChanged:(id)sender
 {
     GravAssignCategoryCell *cell = (GravAssignCategoryCell *)[[((UISwitch *)sender) superview] superview];
@@ -136,10 +162,19 @@
 }
 */
 
-
+//--------------------------------------------------------------
+//
+// View Transition Functions
+//
+//--------------------------------------------------------------
 #pragma mark - Navigation
 
 
+//--------------------------------------------------------------
+//
+// Category Databse Functions
+//
+//--------------------------------------------------------------
 -(void)setCategoriesForTask:(NSDictionary *)list
 {
     self.currentTask.categories = [NSKeyedArchiver archivedDataWithRootObject:list];

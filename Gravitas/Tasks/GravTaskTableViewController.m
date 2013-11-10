@@ -23,6 +23,13 @@
 
 @implementation GravTaskTableViewController
 
+//--------------------------------------------------------------
+//
+// View Initialization
+//
+//--------------------------------------------------------------
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -53,20 +60,35 @@
     // Dispose of any resources that can be recreated.
 }
 
+//--------------------------------------------------------------
+//
+// Table View Functions
+//
+//--------------------------------------------------------------
+
 #pragma mark - Table view data source
 
+//
+// Number of sections
+//
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
     return 1;
 }
 
+//
+// Number of rows
+//
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
     return [self.tasks count];
 }
 
+//
+// Style for cell at row
+//
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ListPrototypeCell";
@@ -93,6 +115,9 @@
     return cell;
 }
 
+//
+// Do delete on row
+//
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
                                             forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -102,23 +127,35 @@
     }
 }
 
+//
+// Define editing style for row
+//
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
            editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     return UITableViewCellEditingStyleDelete;
 }
 
+//
+// Height for row
+//
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 60;
 }
 
+//
+// Tapped row at index
+//
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.selectedTask = [self.tasks objectAtIndex:indexPath.row];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+//
+// Pressed complete button in editing mode
+//
 - (void)tableView:(UITableView *)tableView moreOptionButtonPressedInRowAtIndexPath:(NSIndexPath *)indexPath {
     GravTask *tappedItem = [self.tasks objectAtIndex:indexPath.row];
     
@@ -140,18 +177,51 @@
     }
 }
 
+//
+// Set title for additional edit button
+//
 - (NSString *)tableView:(UITableView *)tableView titleForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     return @"Complete";
 }
 
+//
+// Set color for additional edit button
+//
 - (UIColor *)tableView:(UITableView *)tableView backgroundColorForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [UIColor colorWithRed:0.0f green:1.0f blue:0.0f alpha:1.0f];
 }
+
+//--------------------------------------------------------------
+//
+// View Transition Functions
+//
+//--------------------------------------------------------------
+#pragma mark - Navigation
  
 - (IBAction) unwindToList:(UIStoryboardSegue *)segue
 {
     [self updateTaskList];
 }
+
+// In a story board-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([sender class] == [GravTableViewCell class]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        GravEditTaskViewController *dest = [segue destinationViewController];
+        dest.editingTask = [self.tasks objectAtIndex:indexPath.row];
+    } else if (sender == self.addButton) {
+        
+    } else {
+        
+    }
+}
+
+//--------------------------------------------------------------
+//
+// Task Database Functions
+//
+//--------------------------------------------------------------
 
 - (IBAction) updateTaskList
 {
@@ -205,19 +275,6 @@
     return YES;
 }
 */
-
-
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if (sender != self.addButton) {
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        GravEditTaskViewController *dest = [segue destinationViewController];
-        dest.editingTask = [self.tasks objectAtIndex:indexPath.row];
-    }
-}
 
 
 @end

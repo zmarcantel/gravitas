@@ -10,6 +10,12 @@
 
 @implementation GravTextField
 
+//--------------------------------------------------------------
+//
+// View Initialization
+//
+//--------------------------------------------------------------
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -17,6 +23,13 @@
     }
     return self;
 }
+
+//--------------------------------------------------------------
+//
+// Border Overwrites
+//
+//--------------------------------------------------------------
+
 
 - (void)drawPlaceholderInRect:(CGRect)rect
 {

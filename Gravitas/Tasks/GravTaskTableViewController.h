@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "../Data/GravTask.h"
+#import "GravTableViewCell.h"
 #import "GravAddTaskViewController.h"
 
 @interface GravTaskTableViewController : UITableViewController

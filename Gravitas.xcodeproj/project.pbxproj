@@ -34,6 +34,12 @@
 		9278D41A182CE1C900A28A46 /* GravCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9278D419182CE1C900A28A46 /* GravCategory.m */; };
 		9278D420182CE22400A28A46 /* GravTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 9278D41F182CE22400A28A46 /* GravTask.m */; };
 		9278D427182CF2B700A28A46 /* GravTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9278D426182CF2B700A28A46 /* GravTextField.m */; };
+		927B422818301CF8000BF495 /* GravGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 927B422718301CF8000BF495 /* GravGameViewController.m */; };
+		927B422B18301D0E000BF495 /* GravGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 927B422A18301D0E000BF495 /* GravGameView.m */; };
+		927B422E183025F8000BF495 /* GravNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 927B422D183025F8000BF495 /* GravNavigationController.m */; };
+		927B4231183026A8000BF495 /* GravTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 927B4230183026A8000BF495 /* GravTabBarController.m */; };
+		927FF3F4182F9432008E4B4B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C1D6E4182F809E006F956D /* GLKit.framework */; };
+		927FF3FC182F9536008E4B4B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C1D6D9182F7C0E006F956D /* OpenGLES.framework */; };
 		92C1D6C6182EDD4C006F956D /* GravEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D6C5182EDD4C006F956D /* GravEditTaskViewController.m */; };
 		92C1D6C7182F0EC3006F956D /* libMSCMoreOptionTableViewCell.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9278D3EA182CBC5200A28A46 /* libMSCMoreOptionTableViewCell.a */; };
 		92C1D6CA182F1391006F956D /* GravEditCatgoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D6C9182F1391006F956D /* GravEditCatgoryViewController.m */; };
@@ -107,6 +113,14 @@
 		9278D41F182CE22400A28A46 /* GravTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravTask.m; path = Data/GravTask.m; sourceTree = "<group>"; };
 		9278D425182CF2B700A28A46 /* GravTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravTextField.h; sourceTree = "<group>"; };
 		9278D426182CF2B700A28A46 /* GravTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravTextField.m; sourceTree = "<group>"; };
+		927B422618301CF8000BF495 /* GravGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GravGameViewController.h; path = Game/GravGameViewController.h; sourceTree = "<group>"; };
+		927B422718301CF8000BF495 /* GravGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravGameViewController.m; path = Game/GravGameViewController.m; sourceTree = "<group>"; };
+		927B422918301D0E000BF495 /* GravGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GravGameView.h; path = Game/GravGameView.h; sourceTree = "<group>"; };
+		927B422A18301D0E000BF495 /* GravGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravGameView.m; path = Game/GravGameView.m; sourceTree = "<group>"; };
+		927B422C183025F8000BF495 /* GravNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravNavigationController.h; sourceTree = "<group>"; };
+		927B422D183025F8000BF495 /* GravNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravNavigationController.m; sourceTree = "<group>"; };
+		927B422F183026A8000BF495 /* GravTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravTabBarController.h; sourceTree = "<group>"; };
+		927B4230183026A8000BF495 /* GravTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravTabBarController.m; sourceTree = "<group>"; };
 		92C1D6C4182EDD4C006F956D /* GravEditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GravEditTaskViewController.h; path = Tasks/GravEditTaskViewController.h; sourceTree = "<group>"; };
 		92C1D6C5182EDD4C006F956D /* GravEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravEditTaskViewController.m; path = Tasks/GravEditTaskViewController.m; sourceTree = "<group>"; };
 		92C1D6C8182F1391006F956D /* GravEditCatgoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GravEditCatgoryViewController.h; path = Categories/GravEditCatgoryViewController.h; sourceTree = "<group>"; };
@@ -115,6 +129,9 @@
 		92C1D6CF182F209F006F956D /* GravAssignCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravAssignCategoriesViewController.m; path = Tasks/GravAssignCategoriesViewController.m; sourceTree = "<group>"; };
 		92C1D6D1182F2214006F956D /* GravAssignCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GravAssignCategoryCell.h; path = Tasks/GravAssignCategoryCell.h; sourceTree = "<group>"; };
 		92C1D6D2182F2214006F956D /* GravAssignCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravAssignCategoryCell.m; path = Tasks/GravAssignCategoryCell.m; sourceTree = "<group>"; };
+		92C1D6D9182F7C0E006F956D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		92C1D6E4182F809E006F956D /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		92C1D6EC182F85C5006F956D /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +139,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				927FF3FC182F9536008E4B4B /* OpenGLES.framework in Frameworks */,
+				927FF3F4182F9432008E4B4B /* GLKit.framework in Frameworks */,
 				92C1D6C7182F0EC3006F956D /* libMSCMoreOptionTableViewCell.a in Frameworks */,
 				9246FF64182B43A0001D6EF8 /* CoreGraphics.framework in Frameworks */,
 				9246FF66182B43A0001D6EF8 /* UIKit.framework in Frameworks */,
@@ -166,6 +185,9 @@
 		9246FF60182B43A0001D6EF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92C1D6EC182F85C5006F956D /* SpriteKit.framework */,
+				92C1D6E4182F809E006F956D /* GLKit.framework */,
+				92C1D6D9182F7C0E006F956D /* OpenGLES.framework */,
 				9246FF61182B43A0001D6EF8 /* Foundation.framework */,
 				9246FF63182B43A0001D6EF8 /* CoreGraphics.framework */,
 				9246FF65182B43A0001D6EF8 /* UIKit.framework */,
@@ -177,11 +199,16 @@
 		9246FF67182B43A1001D6EF8 /* Gravitas */ = {
 			isa = PBXGroup;
 			children = (
+				92C1D6D5182F7B34006F956D /* Game */,
 				9278D424182CF2B700A28A46 /* UI */,
 				9246FFB3182B6EAF001D6EF8 /* Data */,
 				9246FFAC182B6C2D001D6EF8 /* Tasks */,
 				9246FFA2182B6926001D6EF8 /* Categories */,
 				9246FF99182B5D33001D6EF8 /* Media */,
+				927B422C183025F8000BF495 /* GravNavigationController.h */,
+				927B422D183025F8000BF495 /* GravNavigationController.m */,
+				927B422F183026A8000BF495 /* GravTabBarController.h */,
+				927B4230183026A8000BF495 /* GravTabBarController.m */,
 				9246FF70182B43A1001D6EF8 /* GravAppDelegate.h */,
 				9246FF71182B43A1001D6EF8 /* GravAppDelegate.m */,
 				9246FF92182B4831001D6EF8 /* Main.storyboard */,
@@ -299,6 +326,17 @@
 				92C1D6D2182F2214006F956D /* GravAssignCategoryCell.m */,
 			);
 			name = AssignCategory;
+			sourceTree = "<group>";
+		};
+		92C1D6D5182F7B34006F956D /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				927B422618301CF8000BF495 /* GravGameViewController.h */,
+				927B422718301CF8000BF495 /* GravGameViewController.m */,
+				927B422918301D0E000BF495 /* GravGameView.h */,
+				927B422A18301D0E000BF495 /* GravGameView.m */,
+			);
+			name = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,6 +463,7 @@
 				9246FF72182B43A1001D6EF8 /* GravAppDelegate.m in Sources */,
 				92C1D6D0182F209F006F956D /* GravAssignCategoriesViewController.m in Sources */,
 				9246FF6E182B43A1001D6EF8 /* main.m in Sources */,
+				927B422818301CF8000BF495 /* GravGameViewController.m in Sources */,
 				92C1D6CA182F1391006F956D /* GravEditCatgoryViewController.m in Sources */,
 				9246FFAF182B6C59001D6EF8 /* GravAddTaskViewController.m in Sources */,
 				9278D427182CF2B700A28A46 /* GravTextField.m in Sources */,
@@ -435,7 +474,10 @@
 				9278D3DE182C9E7B00A28A46 /* GravTableViewCell.m in Sources */,
 				9278D3F0182CC4D900A28A46 /* GravCategoryViewCell.m in Sources */,
 				9246FFAB182B6BAD001D6EF8 /* GravCategoryTableViewController.m in Sources */,
+				927B422E183025F8000BF495 /* GravNavigationController.m in Sources */,
+				927B422B18301D0E000BF495 /* GravGameView.m in Sources */,
 				9278D41A182CE1C900A28A46 /* GravCategory.m in Sources */,
+				927B4231183026A8000BF495 /* GravTabBarController.m in Sources */,
 				9278D420182CE22400A28A46 /* GravTask.m in Sources */,
 				92C1D6C6182EDD4C006F956D /* GravEditTaskViewController.m in Sources */,
 			);

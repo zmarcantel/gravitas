@@ -19,6 +19,12 @@
 
 @implementation GravCategoryTableViewController
 
+//--------------------------------------------------------------
+//
+// View Initialization
+//
+//--------------------------------------------------------------
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -44,20 +50,34 @@
     // Dispose of any resources that can be recreated.
 }
 
+//--------------------------------------------------------------
+//
+// Table View Functions
+//
+//--------------------------------------------------------------
 #pragma mark - Table view data source
 
+//
+// Number of sections
+//
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
     return 1;
 }
 
+//
+// Number of rows in section
+//
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
     return [self.categories count];
 }
 
+//
+// Style for cell at row
+//
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ListPrototypeCell";
@@ -70,6 +90,9 @@
     return cell;
 }
 
+//
+// Editing style for row
+//
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -79,17 +102,26 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     }
 }
 
+//
+// Set editing style for row
+//
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
            editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return UITableViewCellEditingStyleDelete;
 }
 
+//
+// Tapped row at index
+//
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+//
+// Additional edit button pressed
+//
 - (void)tableView:(UITableView *)tableView moreOptionButtonPressedInRowAtIndexPath:(NSIndexPath *)indexPath {
     GravCategory *tappedItem = [self.categories objectAtIndex:indexPath.row];
     
@@ -104,18 +136,46 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     }
 }
 
+//
+// Title for additonal editing button
+//
 - (NSString *)tableView:(UITableView *)tableView titleForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     return @"Rename";
 }
 
+//
+// BAckground color for additional editing button
 - (UIColor *)tableView:(UITableView *)tableView backgroundColorForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [UIColor colorWithRed:0.18f green:0.67f blue:0.84f alpha:1.0f];
+}
+
+//--------------------------------------------------------------
+//
+// View Transition Functions
+//
+//--------------------------------------------------------------
+#pragma mark - Navigation
+
+// In a story board-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([sender class] == [GravCategoryViewCell class]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        GravEditCatgoryViewController *dest = [segue destinationViewController];
+        dest.editingCategory = [self.categories objectAtIndex:indexPath.row];
+    }
 }
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue
 {
     [self updateCategoryList];
 }
+
+//--------------------------------------------------------------
+//
+// Category Database Functions
+//
+//--------------------------------------------------------------
 
 - (IBAction) deleteCategory:(int)index
 {
@@ -170,18 +230,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 }
 */
 
-
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if (sender != self.addButton) {
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        GravEditCatgoryViewController *dest = [segue destinationViewController];
-        dest.editingCategory = [self.categories objectAtIndex:indexPath.row];
-    }
-}
 
 
 @end
