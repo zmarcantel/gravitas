@@ -178,6 +178,9 @@
                                 <state key="normal" title="Categorize">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="gE2-6V-Vrt" kind="push" id="lXR-If-iUH"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Editing Target Completion Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cfr-2U-rsn" customClass="GravTextField">
                                 <rect key="frame" x="20" y="121" width="280" height="30"/>
@@ -212,6 +215,7 @@
                     <connections>
                         <outlet property="additionalField" destination="dYb-4f-O4r" id="lIz-ue-zX4"/>
                         <outlet property="dueDateField" destination="cfr-2U-rsn" id="6fO-iD-qFu"/>
+                        <outlet property="gotoAssignButton" destination="Qs0-Q8-oOd" id="6fG-jt-nfk"/>
                         <outlet property="titleField" destination="biK-W2-GXm" id="WbD-WN-Z6j"/>
                         <outlet property="waitingField" destination="M25-Ul-Whl" id="Nc0-is-5Ge"/>
                     </connections>
@@ -219,7 +223,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJc-QQ-1zK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="HuP-2m-u4r" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="-263"/>
+            <point key="canvasLocation" x="2437" y="-747"/>
+        </scene>
+        <!--Grav Assign Categories View Controller-->
+        <scene sceneID="hKr-OZ-Qy2">
+            <objects>
+                <tableViewController id="gE2-6V-Vrt" customClass="GravAssignCategoriesViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qhx-uw-bDT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AssignCategoryCell" id="gcF-l5-piT" customClass="GravAssignCategoryCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gcF-l5-piT" id="nlu-7e-G43">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yYz-Oj-Mzn">
+                                            <rect key="frame" x="251" y="6" width="51" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </switch>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="toggleActivity" destination="yYz-Oj-Mzn" id="lmz-Ln-CXT"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gE2-6V-Vrt" id="xLf-34-5EB"/>
+                            <outlet property="delegate" destination="gE2-6V-Vrt" id="hEl-B0-zeL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="EhF-TK-hXo"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4FU-ah-t9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3093" y="-1062"/>
         </scene>
         <!--Grav Add Task View Controller-->
         <scene sceneID="KoA-H4-MBU">
@@ -251,6 +293,9 @@
                                 <state key="normal" title="Categorize">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="gE2-6V-Vrt" kind="push" id="l4h-1e-GRl"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Target Completion Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rw5-vb-nlu" customClass="GravTextField">
                                 <rect key="frame" x="20" y="121" width="280" height="30"/>
@@ -291,6 +336,7 @@
                         <outlet property="additionalField" destination="y0t-1b-rcx" id="mmW-ET-UEA"/>
                         <outlet property="doneButton" destination="aph-Jb-kCZ" id="wm7-Nb-yEp"/>
                         <outlet property="dueDateTextField" destination="rw5-vb-nlu" id="mI2-ls-Oji"/>
+                        <outlet property="gotoAssignButton" destination="4xo-di-1MR" id="KPe-Hf-LP8"/>
                         <outlet property="titleField" destination="0iA-Fx-ZTu" id="kSR-Ml-KFi"/>
                         <outlet property="waitingField" destination="5sQ-YY-zFI" id="aQc-Ic-Vij"/>
                     </connections>
@@ -298,7 +344,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIP-Of-hIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="HD6-0p-ete" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="-947"/>
+            <point key="canvasLocation" x="2437" y="-1431"/>
         </scene>
         <!--Grav Add Category View Controller-->
         <scene sceneID="zc3-bw-GIC">
@@ -429,4 +475,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="l4h-1e-GRl"/>
+    </inferredMetricsTieBreakers>
 </document>

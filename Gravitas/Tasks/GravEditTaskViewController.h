@@ -13,6 +13,7 @@
 #import "../Data/GravTask.h"
 #import "../UI/GravTextField.h"
 #import "GravTaskTableViewController.h"
+#import "GravAssignCategoriesViewController.h"
 
 @interface GravEditTaskViewController : UIViewController
 

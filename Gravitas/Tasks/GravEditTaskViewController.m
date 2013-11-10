@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet GravTextField *dueDateField;
 @property (weak, nonatomic) IBOutlet GravTextField *waitingField;
 @property (weak, nonatomic) IBOutlet UITextView *additionalField;
+@property (weak, nonatomic) IBOutlet UIButton *gotoAssignButton;
 
 @end
 
@@ -94,18 +95,22 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    self.editingTask.name            = self.titleField.text;
-    self.editingTask.peopleWaiting   = [[NSNumber alloc] initWithInt:[self.waitingField.text integerValue]];
-    self.editingTask.details         = self.additionalField.text;
+    if (sender == self.gotoAssignButton) {
+        GravAssignCategoriesViewController *assign = [segue destinationViewController];
+        assign.currentTask = self.editingTask;
+    } else {
+        self.editingTask.name            = self.titleField.text;
+        self.editingTask.peopleWaiting   = [[NSNumber alloc] initWithInt:[self.waitingField.text integerValue]];
+        self.editingTask.details         = self.additionalField.text;
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"EEEE, MMM dd, yyyy '@' hh:mm a"];
-    self.editingTask.targetDate      = ((UIDatePicker *)self.dueDateField.inputView).date;
-    NSLog(@"Edit Target Date: %@\n", self.editingTask.targetDate);
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"EEEE, MMM dd, yyyy '@' hh:mm a"];
+        self.editingTask.targetDate      = ((UIDatePicker *)self.dueDateField.inputView).date;
     
-    NSError *error;
-    if (![self.managedObjectContext save:&error]) {
-        NSLog(@"Failed to save task object: %@", [error localizedDescription]);
+        NSError *error;
+        if (![self.managedObjectContext save:&error]) {
+            NSLog(@"Failed to save task object: %@", [error localizedDescription]);
+        }
     }
 }
 

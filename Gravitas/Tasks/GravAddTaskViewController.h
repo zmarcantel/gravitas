@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 
 #import "../GravAppDelegate.h"
+#import "GravAssignCategoriesViewController.h"
 
 #import "../UI/GravTextField.h"
 #import "../Data/GravTask.h"
 
 @interface GravAddTaskViewController : UIViewController <UITextFieldDelegate>
 
+@property BOOL alreadyCreated;
 @property GravTask *task;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 

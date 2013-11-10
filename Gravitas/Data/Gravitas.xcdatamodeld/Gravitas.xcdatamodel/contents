@@ -5,7 +5,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="GravTask" representedClassName="GravTask" syncable="YES">
-        <attribute name="categories" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="categories" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="complete" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="completeDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="createDate" optional="YES" attributeType="Date" syncable="YES"/>

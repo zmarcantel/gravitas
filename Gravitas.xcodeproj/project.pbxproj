@@ -37,6 +37,8 @@
 		92C1D6C6182EDD4C006F956D /* GravEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D6C5182EDD4C006F956D /* GravEditTaskViewController.m */; };
 		92C1D6C7182F0EC3006F956D /* libMSCMoreOptionTableViewCell.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9278D3EA182CBC5200A28A46 /* libMSCMoreOptionTableViewCell.a */; };
 		92C1D6CA182F1391006F956D /* GravEditCatgoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D6C9182F1391006F956D /* GravEditCatgoryViewController.m */; };
+		92C1D6D0182F209F006F956D /* GravAssignCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D6CF182F209F006F956D /* GravAssignCategoriesViewController.m */; };
+		92C1D6D3182F2214006F956D /* GravAssignCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D6D2182F2214006F956D /* GravAssignCategoryCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,10 @@
 		92C1D6C5182EDD4C006F956D /* GravEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravEditTaskViewController.m; path = Tasks/GravEditTaskViewController.m; sourceTree = "<group>"; };
 		92C1D6C8182F1391006F956D /* GravEditCatgoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GravEditCatgoryViewController.h; path = Categories/GravEditCatgoryViewController.h; sourceTree = "<group>"; };
 		92C1D6C9182F1391006F956D /* GravEditCatgoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravEditCatgoryViewController.m; path = Categories/GravEditCatgoryViewController.m; sourceTree = "<group>"; };
+		92C1D6CE182F209F006F956D /* GravAssignCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GravAssignCategoriesViewController.h; path = Tasks/GravAssignCategoriesViewController.h; sourceTree = "<group>"; };
+		92C1D6CF182F209F006F956D /* GravAssignCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravAssignCategoriesViewController.m; path = Tasks/GravAssignCategoriesViewController.m; sourceTree = "<group>"; };
+		92C1D6D1182F2214006F956D /* GravAssignCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GravAssignCategoryCell.h; path = Tasks/GravAssignCategoryCell.h; sourceTree = "<group>"; };
+		92C1D6D2182F2214006F956D /* GravAssignCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravAssignCategoryCell.m; path = Tasks/GravAssignCategoryCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +256,7 @@
 				9278D3DD182C9E7B00A28A46 /* GravTableViewCell.m */,
 				92C1D6C4182EDD4C006F956D /* GravEditTaskViewController.h */,
 				92C1D6C5182EDD4C006F956D /* GravEditTaskViewController.m */,
+				92C1D6D4182F2885006F956D /* AssignCategory */,
 			);
 			name = Tasks;
 			sourceTree = "<group>";
@@ -281,6 +288,17 @@
 				9278D426182CF2B700A28A46 /* GravTextField.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		92C1D6D4182F2885006F956D /* AssignCategory */ = {
+			isa = PBXGroup;
+			children = (
+				92C1D6CE182F209F006F956D /* GravAssignCategoriesViewController.h */,
+				92C1D6CF182F209F006F956D /* GravAssignCategoriesViewController.m */,
+				92C1D6D1182F2214006F956D /* GravAssignCategoryCell.h */,
+				92C1D6D2182F2214006F956D /* GravAssignCategoryCell.m */,
+			);
+			name = AssignCategory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,10 +423,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9246FF72182B43A1001D6EF8 /* GravAppDelegate.m in Sources */,
+				92C1D6D0182F209F006F956D /* GravAssignCategoriesViewController.m in Sources */,
 				9246FF6E182B43A1001D6EF8 /* main.m in Sources */,
 				92C1D6CA182F1391006F956D /* GravEditCatgoryViewController.m in Sources */,
 				9246FFAF182B6C59001D6EF8 /* GravAddTaskViewController.m in Sources */,
 				9278D427182CF2B700A28A46 /* GravTextField.m in Sources */,
+				92C1D6D3182F2214006F956D /* GravAssignCategoryCell.m in Sources */,
 				9246FFA5182B6970001D6EF8 /* GravAddCategoryViewController.m in Sources */,
 				9278D417182CE0EC00A28A46 /* Gravitas.xcdatamodeld in Sources */,
 				9246FFB2182B6C74001D6EF8 /* GravTaskTableViewController.m in Sources */,

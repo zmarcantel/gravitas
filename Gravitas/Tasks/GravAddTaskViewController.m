@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet GravTextField *dueDateTextField;
 @property (weak, nonatomic) IBOutlet GravTextField *waitingField;
 @property (weak, nonatomic) IBOutlet UITextView *additionalField;
+@property (weak, nonatomic) IBOutlet UIButton *gotoAssignButton;
 
 @end
 
@@ -36,6 +37,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.alreadyCreated = NO;
+    
 	GravAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = appDelegate.managedObjectContext;
     
@@ -96,36 +99,57 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if (sender != self.doneButton) return;
+    [self.dueDateTextField endEditing:YES];
+    [self.waitingField endEditing:YES];
+    [self.titleField endEditing:YES];
     
-    [self addTask:sender];
+    if (sender == self.gotoAssignButton) {
+        [self addTask];
+        self.alreadyCreated = YES;
+        
+        GravAssignCategoriesViewController *assign = [segue destinationViewController];
+        assign.currentTask = self.task;
+    } else if (sender == self.doneButton) {
+        [self addTask];
+    } else if (self.task != nil) {
+        [self.managedObjectContext deleteObject:self.task];
+    }
 }
 
-- (void) addTask: (id)sender {
+- (void) addTask {
     // TODO: add popup/marking for required fields
     
+    if (self.alreadyCreated == NO) {
+        GravTask *newTask = [NSEntityDescription insertNewObjectForEntityForName:@"GravTask"
+                                                          inManagedObjectContext:self.managedObjectContext];
+        [self updateTaskFields:newTask];
+        self.task = newTask;
+    } else {
+        [self updateTaskFields:self.task];
+    }
+    
     // title must be given
-    if (self.titleField.text.length == 0) { return; }
+    if (self.task.name.length == 0) { return; }
     // date must be given
-    if (self.dueDateTextField.text.length == 0) { return; }
-    
-    GravTask *newTask = [NSEntityDescription insertNewObjectForEntityForName:@"GravTask"
-                                                  inManagedObjectContext:self.managedObjectContext];
-    
-    newTask.name            = self.titleField.text;
-    newTask.createDate      = [NSDate date];
-    newTask.complete        = NO;
-    newTask.peopleWaiting   = [[NSNumber alloc] initWithInt:[self.waitingField.text integerValue]];
-    newTask.details         = self.additionalField.text;
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"EEEE, MMM dd, yyyy '@' hh:mm a"];
-    newTask.targetDate      = [dateFormatter dateFromString:self.dueDateTextField.text];
+    if (self.task.targetDate == nil) { return; }
     
     NSError *error;
     if (![self.managedObjectContext save:&error]) {
         NSLog(@"Failed to save task object: %@", [error localizedDescription]);
     }
+}
+
+- (void) updateTaskFields:(GravTask *)task
+{
+    task.name            = self.titleField.text;
+    task.createDate      = [NSDate date];
+    task.complete        = NO;
+    task.peopleWaiting   = [[NSNumber alloc] initWithInt:[self.waitingField.text integerValue]];
+    task.details         = self.additionalField.text;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE, MMM dd, yyyy '@' hh:mm a"];
+    task.targetDate      = [dateFormatter dateFromString:self.dueDateTextField.text];
 }
 
 @end
