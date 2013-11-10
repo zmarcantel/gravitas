@@ -9,8 +9,11 @@
 #import "GravCategoryTableViewController.h"
 #import "../GravAppDelegate.h"
 #import "GravCategoryViewCell.h"
+#import "GravEditCatgoryViewController.h"
 
 @interface GravCategoryTableViewController ()
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
 @end
 
@@ -90,6 +93,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)tableView:(UITableView *)tableView moreOptionButtonPressedInRowAtIndexPath:(NSIndexPath *)indexPath {
     GravCategory *tappedItem = [self.categories objectAtIndex:indexPath.row];
     
+    [self performSegueWithIdentifier:@"editCategorySegue" sender:[tableView cellForRowAtIndexPath:indexPath]];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     
@@ -165,16 +170,18 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if (sender != self.addButton) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        GravEditCatgoryViewController *dest = [segue destinationViewController];
+        dest.editingCategory = [self.categories objectAtIndex:indexPath.row];
+    }
 }
 
- */
 
 @end

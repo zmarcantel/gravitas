@@ -74,8 +74,6 @@
     NSError *error;
     if (![self.managedObjectContext save:&error]) {
         NSLog(@"Failed to save category object: %@", [error localizedDescription]);
-    } else {
-        NSLog(@"Saved category:\n%@\n", newCat);
     }
 }
 

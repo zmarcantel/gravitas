@@ -29,12 +29,14 @@
 		9246FFAF182B6C59001D6EF8 /* GravAddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9246FFAE182B6C59001D6EF8 /* GravAddTaskViewController.m */; };
 		9246FFB2182B6C74001D6EF8 /* GravTaskTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9246FFB1182B6C74001D6EF8 /* GravTaskTableViewController.m */; };
 		9278D3DE182C9E7B00A28A46 /* GravTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9278D3DD182C9E7B00A28A46 /* GravTableViewCell.m */; };
-		9278D3ED182CBCD600A28A46 /* libMSCMoreOptionTableViewCell.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9278D3EA182CBC5200A28A46 /* libMSCMoreOptionTableViewCell.a */; };
 		9278D3F0182CC4D900A28A46 /* GravCategoryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9278D3EF182CC4D900A28A46 /* GravCategoryViewCell.m */; };
 		9278D417182CE0EC00A28A46 /* Gravitas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9278D415182CE0EC00A28A46 /* Gravitas.xcdatamodeld */; };
 		9278D41A182CE1C900A28A46 /* GravCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9278D419182CE1C900A28A46 /* GravCategory.m */; };
 		9278D420182CE22400A28A46 /* GravTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 9278D41F182CE22400A28A46 /* GravTask.m */; };
 		9278D427182CF2B700A28A46 /* GravTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9278D426182CF2B700A28A46 /* GravTextField.m */; };
+		92C1D6C6182EDD4C006F956D /* GravEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D6C5182EDD4C006F956D /* GravEditTaskViewController.m */; };
+		92C1D6C7182F0EC3006F956D /* libMSCMoreOptionTableViewCell.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9278D3EA182CBC5200A28A46 /* libMSCMoreOptionTableViewCell.a */; };
+		92C1D6CA182F1391006F956D /* GravEditCatgoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D6C9182F1391006F956D /* GravEditCatgoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,10 @@
 		9278D41F182CE22400A28A46 /* GravTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravTask.m; path = Data/GravTask.m; sourceTree = "<group>"; };
 		9278D425182CF2B700A28A46 /* GravTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravTextField.h; sourceTree = "<group>"; };
 		9278D426182CF2B700A28A46 /* GravTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravTextField.m; sourceTree = "<group>"; };
+		92C1D6C4182EDD4C006F956D /* GravEditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GravEditTaskViewController.h; path = Tasks/GravEditTaskViewController.h; sourceTree = "<group>"; };
+		92C1D6C5182EDD4C006F956D /* GravEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravEditTaskViewController.m; path = Tasks/GravEditTaskViewController.m; sourceTree = "<group>"; };
+		92C1D6C8182F1391006F956D /* GravEditCatgoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GravEditCatgoryViewController.h; path = Categories/GravEditCatgoryViewController.h; sourceTree = "<group>"; };
+		92C1D6C9182F1391006F956D /* GravEditCatgoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GravEditCatgoryViewController.m; path = Categories/GravEditCatgoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9278D3ED182CBCD600A28A46 /* libMSCMoreOptionTableViewCell.a in Frameworks */,
+				92C1D6C7182F0EC3006F956D /* libMSCMoreOptionTableViewCell.a in Frameworks */,
 				9246FF64182B43A0001D6EF8 /* CoreGraphics.framework in Frameworks */,
 				9246FF66182B43A0001D6EF8 /* UIKit.framework in Frameworks */,
 				9246FF62182B43A0001D6EF8 /* Foundation.framework in Frameworks */,
@@ -227,6 +233,8 @@
 				9246FFAA182B6BAD001D6EF8 /* GravCategoryTableViewController.m */,
 				9278D3EE182CC4D900A28A46 /* GravCategoryViewCell.h */,
 				9278D3EF182CC4D900A28A46 /* GravCategoryViewCell.m */,
+				92C1D6C8182F1391006F956D /* GravEditCatgoryViewController.h */,
+				92C1D6C9182F1391006F956D /* GravEditCatgoryViewController.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -240,6 +248,8 @@
 				9246FFB1182B6C74001D6EF8 /* GravTaskTableViewController.m */,
 				9278D3DC182C9E7B00A28A46 /* GravTableViewCell.h */,
 				9278D3DD182C9E7B00A28A46 /* GravTableViewCell.m */,
+				92C1D6C4182EDD4C006F956D /* GravEditTaskViewController.h */,
+				92C1D6C5182EDD4C006F956D /* GravEditTaskViewController.m */,
 			);
 			name = Tasks;
 			sourceTree = "<group>";
@@ -396,6 +406,7 @@
 			files = (
 				9246FF72182B43A1001D6EF8 /* GravAppDelegate.m in Sources */,
 				9246FF6E182B43A1001D6EF8 /* main.m in Sources */,
+				92C1D6CA182F1391006F956D /* GravEditCatgoryViewController.m in Sources */,
 				9246FFAF182B6C59001D6EF8 /* GravAddTaskViewController.m in Sources */,
 				9278D427182CF2B700A28A46 /* GravTextField.m in Sources */,
 				9246FFA5182B6970001D6EF8 /* GravAddCategoryViewController.m in Sources */,
@@ -406,6 +417,7 @@
 				9246FFAB182B6BAD001D6EF8 /* GravCategoryTableViewController.m in Sources */,
 				9278D41A182CE1C900A28A46 /* GravCategory.m in Sources */,
 				9278D420182CE22400A28A46 /* GravTask.m in Sources */,
+				92C1D6C6182EDD4C006F956D /* GravEditTaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,7 +549,7 @@
 				GCC_PREFIX_HEADER = "Gravitas/Gravitas-Prefix.pch";
 				INFOPLIST_FILE = "Gravitas/Gravitas-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "3658D58B-567A-4DC2-83B8-2F948A4B60AE";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -554,7 +566,7 @@
 				GCC_PREFIX_HEADER = "Gravitas/Gravitas-Prefix.pch";
 				INFOPLIST_FILE = "Gravitas/Gravitas-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "3658D58B-567A-4DC2-83B8-2F948A4B60AE";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};

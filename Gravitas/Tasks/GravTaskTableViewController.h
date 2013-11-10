@@ -14,6 +14,9 @@
 @interface GravTaskTableViewController : UITableViewController
 
 @property NSArray *tasks;
+@property GravTask *selectedTask;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+
+- (IBAction) updateTaskList;
 
 @end

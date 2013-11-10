@@ -9,6 +9,7 @@
 #import "GravTaskTableViewController.h"
 #import "../GravAppDelegate.h"
 #import "GravTableViewCell.h"
+#import "GravEditTaskViewController.h"
 
 @interface GravTaskTableViewController ()
 
@@ -16,6 +17,7 @@
 
 @property NSNumber *TASK_COMPLETE;
 @property NSNumber *TASK_INCOMPLETE;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
 @end
 
@@ -113,6 +115,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.selectedTask = [self.tasks objectAtIndex:indexPath.row];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -203,16 +206,18 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if (sender != self.addButton) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        GravEditTaskViewController *dest = [segue destinationViewController];
+        dest.editingTask = [self.tasks objectAtIndex:indexPath.row];
+    }
 }
 
- */
 
 @end

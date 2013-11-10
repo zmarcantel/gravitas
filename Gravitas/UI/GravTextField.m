@@ -20,8 +20,8 @@
 
 - (void)drawPlaceholderInRect:(CGRect)rect
 {
-    UIColor *colour = [UIColor blackColor];
-    NSDictionary *attributes = @{NSForegroundColorAttributeName: colour, NSFontAttributeName: self.font};
+    UIColor *color = [UIColor lightGrayColor];
+    NSDictionary *attributes = @{NSForegroundColorAttributeName: color, NSFontAttributeName: self.font};
     CGRect boundingRect = [self.placeholder boundingRectWithSize:rect.size options:0 attributes:attributes context:nil];
     [self.placeholder drawAtPoint:CGPointMake((rect.size.width/2)-boundingRect.size.width/2,
                                               (rect.size.height/2)-boundingRect.size.height/2)

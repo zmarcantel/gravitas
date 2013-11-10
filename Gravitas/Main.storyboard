@@ -39,10 +39,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="Ncv-Bw-DK2" id="Mo9-6i-kJ5"/>
+                        <segue destination="Rcd-tu-2FL" kind="push" identifier="editCategorySegue" id="O6v-zM-RK5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uv4-Qx-rpE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1082" y="-225"/>
+            <point key="canvasLocation" x="1082" y="428"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eIs-zC-Mx5">
@@ -55,8 +59,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="m1l-gM-Pgy" kind="relationship" relationship="viewControllers" id="aWi-QV-FdG"/>
                         <segue destination="KZ0-gY-ZXS" kind="relationship" relationship="viewControllers" id="Wh5-h5-lDW"/>
+                        <segue destination="m1l-gM-Pgy" kind="relationship" relationship="viewControllers" id="aWi-QV-FdG"/>
                         <segue destination="SsO-YQ-11y" kind="relationship" relationship="viewControllers" id="GbQ-v3-wNR"/>
                     </connections>
                 </tabBarController>
@@ -92,11 +96,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListPrototypeCell" rowHeight="60" id="puz-R0-R1F" customClass="GravTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListPrototypeCell" rowHeight="60" id="puz-R0-R1F" customClass="GravTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="puz-R0-R1F" id="YiD-gb-O1e">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN9-ZA-tHq">
@@ -119,6 +123,7 @@
                                     <outlet property="contentView" destination="YiD-gb-O1e" id="gyz-Sk-jKS"/>
                                     <outlet property="dueDateField" destination="rFM-W3-zFf" id="2aG-jo-LTz"/>
                                     <outlet property="titleField" destination="EN9-ZA-tHq" id="FZB-GG-Km2"/>
+                                    <segue destination="J1h-ar-Y3J" kind="push" id="XT2-4F-puj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -135,12 +140,86 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="ifk-gX-mTi" id="wjV-Cw-del"/>
                         <outlet property="view" destination="Owr-QF-ENj" id="Gsv-9h-r8f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fm-eb-y0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1082" y="428"/>
+            <point key="canvasLocation" x="1082" y="-263"/>
+        </scene>
+        <!--Grav Edit Task View Controller-->
+        <scene sceneID="0dR-Hz-KW7">
+            <objects>
+                <viewController id="J1h-ar-Y3J" customClass="GravEditTaskViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fDy-H8-sZe"/>
+                        <viewControllerLayoutGuide type="bottom" id="bXv-Fq-x3E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NY0-Qt-y29">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Editing Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="biK-W2-GXm" customClass="GravTextField">
+                                <rect key="frame" x="20" y="83" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Editing Waiting" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M25-Ul-Whl" customClass="GravTextField">
+                                <rect key="frame" x="20" y="159" width="136" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qs0-Q8-oOd">
+                                <rect key="frame" x="164" y="159" width="136" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Categorize">
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Editing Target Completion Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cfr-2U-rsn" customClass="GravTextField">
+                                <rect key="frame" x="20" y="121" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dYb-4f-O4r">
+                                <rect key="frame" x="20" y="226" width="280" height="152"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Additional Information:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3p-vL-V4N">
+                                <rect key="frame" x="20" y="197" width="174" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kce-c0-mwV">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="M2o-sg-tSj">
+                            <connections>
+                                <segue destination="HuP-2m-u4r" kind="unwind" unwindAction="unwindToList:" id="Mw2-DF-z3i"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="additionalField" destination="dYb-4f-O4r" id="lIz-ue-zX4"/>
+                        <outlet property="dueDateField" destination="cfr-2U-rsn" id="6fO-iD-qFu"/>
+                        <outlet property="titleField" destination="biK-W2-GXm" id="WbD-WN-Z6j"/>
+                        <outlet property="waitingField" destination="M25-Ul-Whl" id="Nc0-is-5Ge"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nJc-QQ-1zK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="HuP-2m-u4r" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1783" y="-263"/>
         </scene>
         <!--Grav Add Task View Controller-->
         <scene sceneID="KoA-H4-MBU">
@@ -219,7 +298,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIP-Of-hIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="HD6-0p-ete" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1545" y="428"/>
+            <point key="canvasLocation" x="1783" y="-947"/>
         </scene>
         <!--Grav Add Category View Controller-->
         <scene sceneID="zc3-bw-GIC">
@@ -233,7 +312,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DhY-tJ-Es6">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DhY-tJ-Es6" customClass="GravTextField">
                                 <rect key="frame" x="20" y="176" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
@@ -262,7 +341,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nu2-L9-Nw7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="r91-PU-FLZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1545" y="-225"/>
+            <point key="canvasLocation" x="2437" y="-8"/>
+        </scene>
+        <!--Grav Edit Catgory View Controller-->
+        <scene sceneID="jh3-1y-CI4">
+            <objects>
+                <viewController id="Rcd-tu-2FL" customClass="GravEditCatgoryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LoT-bg-M1I"/>
+                        <viewControllerLayoutGuide type="bottom" id="J6z-CT-hBO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PW1-AB-mDR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dea-eF-FKd" customClass="GravTextField">
+                                <rect key="frame" x="20" y="176" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5go-BF-7MY">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="DSl-mT-xDR">
+                            <connections>
+                                <segue destination="27y-0x-8ww" kind="unwind" unwindAction="unwindToList:" id="Ng4-Vk-WLC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="titleField" destination="dea-eF-FKd" id="ndE-GF-rMA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a9l-al-rKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="27y-0x-8ww" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2437" y="663"/>
         </scene>
         <!--Navigation Controller - Categories-->
         <scene sceneID="wxz-iJ-Q4L">
@@ -281,7 +397,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Itb-Dj-xeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="556" y="-225"/>
+            <point key="canvasLocation" x="556" y="428"/>
         </scene>
         <!--Navigation Controller - Tasks-->
         <scene sceneID="U05-BJ-KMN">
@@ -300,7 +416,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QyD-bH-Ue5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="556" y="428"/>
+            <point key="canvasLocation" x="556" y="-263"/>
         </scene>
     </scenes>
     <resources>
